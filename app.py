@@ -1,7 +1,7 @@
 import streamlit as st
 import pandas as pd
 import plotly.express as px
-import os
+# import os
 import warnings
 warnings.filterwarnings('ignore')
 
@@ -22,7 +22,7 @@ if fl is not None:
     st.write(filename)
     df = pd.read_csv(filename, encoding = 'ISO-8859-1')
 else:
-    os.chdir("C:/Users/hp/Documents")
+    # os.chdir("C:/Users/hp/Documents")
     df = pd.read_csv("Sample_Superstore.csv", encoding = 'ISO-8859-1')
 
 
@@ -192,4 +192,5 @@ with st.expander("View Data"):
 
 # how to download whole data set
 csv = df.to_csv(index=False).encode('utf-8')
+
 st.download_button(label="Download Complete data as CSV", data=csv, file_name='Complete_Superstore_data.csv', mime='text/csv')
